@@ -20,13 +20,14 @@ recept-hodnoceni, recept-nazev, recept-popis.
 
 //proměnné
 let seznamReceptu = document.getElementById('recepty');
+let recept = document.getElementsByClassName('recept');
 
 //zobrazení receptů
-zobrazRecepty();
+zobrazRecepty(recepty);
 
 //zobrazení receptů
-function zobrazRecepty() {
-  for (let i = 0; i < recepty.length; i++) {
+function zobrazRecepty(x) {
+  for (let i = 0; i < x.length; i++) {
     let recept = document.createElement('div');
     recept.classList.add('recept');
 
@@ -46,8 +47,8 @@ function zobrazRecepty() {
     recept.appendChild(info);
     seznamReceptu.appendChild(recept);
 
-    foto.src = recepty[i].img;
-    nazev.innerText = recepty[i].nadpis;
+    foto.src = x[i].img;
+    nazev.innerText = x[i].nadpis;
    } 
 }
 
@@ -56,15 +57,33 @@ function zobrazRecepty() {
 window.addEventListener("load", vyhledej);
 
 function vyhledej () {
-  // (B) ATTACH KEY UP LISTENER TO SEARCH BOX
   document.getElementById("hledat").addEventListener("keyup", function(){
-    // (C) GET THE SEARCH TERM
     let hledej = this.value.toLowerCase();
-    
-    // (E) LOOP THROUGH LIST ITELS - ONLY SHOW ITEMS THAT MATCH SEARCH
+    let txtValue;
+    for (let i = 0; i < recept.length; i++)  {
+      let a = recept[i].getElementsByTagName("h3")[0];
+      txtValue = a.textContent || a.innerText;
+      let item = txtValue.toLowerCase();
+      if (item.indexOf(hledej) > -1) {recept[i].style.display = "";}
+      else {recept[i].style.display = "none"};
+    };
+  });
+};
+
+
+//filtrovani podle kategorie
+
+window.addEventListener("load", vyfiltruj);
+
+function vyfiltruj () {
+  document.getElementById("kategorie").addEventListener("change", function(){
+    let e = document.getElementById("kategorie");
+    let text = e.options[e.selectedIndex].text;
+    console.log(text);
+
     for (let i = 0; i < recepty.length; i++)  {
-      let item = recepty[i].nadpis.toLowerCase();
-      if (item.indexOf(hledej) == -1) {nazev.style.color = "red"};
+      if (recepty[i].kategorie == text) {recept[i].style.display = "";}
+      else {recept[i].style.display = "none"};
     };
   });
 };
