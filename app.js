@@ -82,11 +82,17 @@ function vyfiltruj () {
     console.log(text);
     let vyfiltrovane = [];
 
-    for (let i = 0; i < recepty.length; i++)  {
-      if (recepty[i].kategorie == text) {vyfiltrovane.push(recepty[i])}
-      //else {recept[i].style.display = "none"};
+      if (text == "") {
+        vyfiltrovane = recepty;
+      } else {
+
+      for (let i = 0; i < recepty.length; i++)  {
+        if (recepty[i].kategorie == text) {vyfiltrovane.push(recepty[i])}
+        //else {recept[i].style.display = "none"};
+      };
     };
     seznamReceptu.innerHTML = "";
     zobrazRecepty(vyfiltrovane);
+    
   });
 };
