@@ -80,10 +80,13 @@ function vyfiltruj () {
     let e = document.getElementById("kategorie");
     let text = e.options[e.selectedIndex].text;
     console.log(text);
+    let vyfiltrovane = [];
 
     for (let i = 0; i < recepty.length; i++)  {
-      if (recepty[i].kategorie == text) {recept[i].style.display = "";}
-      else {recept[i].style.display = "none"};
+      if (recepty[i].kategorie == text) {vyfiltrovane.push(recepty[i])}
+      //else {recept[i].style.display = "none"};
     };
+    seznamReceptu.innerHTML = "";
+    zobrazRecepty(vyfiltrovane);
   });
 };
