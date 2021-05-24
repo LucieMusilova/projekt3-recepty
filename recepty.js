@@ -36,7 +36,7 @@ const recepty = [
   },
   { nadpis: 'Vajíčková omeleta se špenátem',
     popis: 'Jí hoře ocelovými vozíkem. Esli kotě napadne od ferdo, no pás uznat pustý. Prý chlapče sáhla tě koleno jež uvádí a posunující.',
-    hodnoceni: 4.2,
+    hodnoceni: 4.3,
     kategorie: 'Snídaně',
     stitek: 'snidane',
     img: 'https://images.unsplash.com/photo-1494597706938-de2cd7341979?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6dc5376ce585ce0df0d44232b9bab53c&auto=format&fit=crop&w=1379&q=80'
@@ -92,7 +92,7 @@ const recepty = [
   },
   { nadpis: 'Sladký toast s ovocem',
     popis: 'Jí hoře ocelovými vozíkem. Esli kotě napadne od ferdo, no pás uznat pustý. Prý chlapče sáhla tě koleno jež uvádí a posunující.',
-    hodnoceni: 4.2,
+    hodnoceni: 4.1,
     kategorie: 'Snídaně',
     stitek: 'snidane',
     img: 'https://images.unsplash.com/photo-1495214783159-3503fd1b572d?ixlib=rb-0.3.5&s=b2f8991c8bfaac59a8d115930d9c12cd&auto=format&fit=crop&w=1350&q=80'
